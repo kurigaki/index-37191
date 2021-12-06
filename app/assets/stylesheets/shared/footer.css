@@ -1,0 +1,26 @@
+.footer-all {
+  width: 100vw;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.footer-lists {
+  display: flex;
+  margin: auto;
+}
+
+.bottom-list {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}

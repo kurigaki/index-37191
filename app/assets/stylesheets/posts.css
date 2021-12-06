@@ -1,0 +1,36 @@
+.posts {
+  background-color: #FAFAFA;
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px 0;
+  overflow: scroll;
+}
+
+.post {
+  margin: 10px 0 0 0;
+}
+
+.upper-post{
+  display: flex;
+}
+
+.post-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.post-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-post {
+  margin-top: 10px;
+}
+
+.post-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
