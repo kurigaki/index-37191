@@ -1,0 +1,24 @@
+.header-all {
+  width: 100vw;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.header-lists {
+  display: flex;
+  margin: auto;
+}
+
+.btn{
+  margin: 1px;
+}
