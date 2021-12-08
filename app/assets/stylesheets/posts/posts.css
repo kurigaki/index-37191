@@ -34,3 +34,11 @@
   font-size: 14px;
   margin-bottom: 40px;
 }
+
+.post-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}

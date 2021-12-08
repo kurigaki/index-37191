@@ -1,33 +1,13 @@
-<div class="posts">
-  <div class="post">
-    <div class="upper-post">
-      <div class="post-user">
-        Tom
-      </div>
-      <div class="post-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-post">
-      <div class="post-content">
-        おはよう
-      </div>
-    </div>
+<div class="contents row">
+  <% @posts.each do |post| %>
+      <p><%= post.title %></p>
+      <p><%= post.text %></p>
+  <%= image_tag post.image.variant(resize: '500x500') ,class:"post-img" if post.image.attached?%>
+  <% if user_signed_in? && current_user.id == post.user_id %>
+  <div>
+  <%= link_to "投稿の編集", edit_post_path(post.id), method: :get, class: "btn btn-warning" %>
+  <%= link_to "投稿の削除", post_path(post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
   </div>
-
-  <div class="post">
-    <div class="upper-post">
-      <div class="post-user">
-        Tom
-      </div>
-      <div class="post-date">
-        2020/3/31(Wed) 12:47:30
-      </div>
-    </div>
-    <div class="lower-post">
-      <div class="post-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
+  <% end %>
+  <% end %>
 </div>
