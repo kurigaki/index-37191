@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "posts/side_bar" %>
+  </div>
+</div>
+
+
+<div class="card col-sm-5 mx-auto mt-5">
+  <div class="card-body">
+    <h3 class="mt-1 mb-3">投稿する</h3>
+    <%= form_with(model: @post, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "タイトル", :class => "form-label" %>
+      <%= f.text_field :title, placeholder:"例) バリデーション", autofocus: true, :class => "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :text, "テキスト", :class => "form-label" %>
+      <%= f.text_field :text, placeholder:"例) 入力チェックのこと", :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :reference, "参考URL", :class => "form-label" %>
+      <%= f.text_field :reference, placeholder:"例) https://wa3.i-3-i.info/word11610.html", :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image, "参考画像", :class => "form-label" %>
+      <%= f.file_field :image, :class => "form-control" %>
+    </div>
+ 
+    <div class="col text-center"><br>
+      <%= f.submit "投稿する", :class => "btn btn-primary btn-block" %>
+      <%=link_to 'もどる', root_path, :class => "btn btn-secondary btn-block" %>
+    </div>
+    <% end %>
+ 
+  </div>
+</div>
+
+<%= render "shared/footer" %>
