@@ -2,10 +2,11 @@
   <div class='nav'>
     <ul class='header-lists'>
       <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.name}さんのページ", "/users/#{current_user.id}", class: "btn btn-info" %></li>
+      <li><%= link_to "#{current_user.name}さんのマイページ", root_path, class: "btn btn-info" %></li>
+      <li><%= link_to "アカウントの編集", edit_user_registration_path(current_user), class: "btn btn-dark" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-secondary" %></li>
       <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "btn btn-info" %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "btn btn-dark" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "btn btn-info" %></li>
       <% end %>
       <%= link_to 'トップページ', root_path, class: "btn btn-primary" %></li>
