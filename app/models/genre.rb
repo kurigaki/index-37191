@@ -13,8 +13,7 @@ class Genre < ActiveHash::Base
     { id: 11, name: 'SQL' },
     { id: 12, name: 'その他' }
   ]
- 
-   include ActiveHash::Associations
-   has_many :posts
- 
-  end
+
+  include ActiveHash::Associations
+  has_many :posts
+end
