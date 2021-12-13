@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render 'posts/new'
+      redirect_to new_post_path
     end
   end
 
@@ -31,12 +31,12 @@ class PostsController < ApplicationController
       redirect_to root_path(@post.id)
     else
       @post = Post.find(params[:id])
-      render :edit
+      redirect_to  edit_post_path(@post.id)
     end
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :text, :reference,:image).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :reference,:genre_id,:image).merge(user_id: current_user.id)
   end
 end
