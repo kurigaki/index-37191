@@ -15,7 +15,7 @@
     <%= render 'shared/error_messages', model: f.object %>
     <div class="form-group">
       <%= f.label :image, "ジャンル", :class => "form-label" %>
-      <span class="indispensable">必須</span><br> %>
+      <span class="indispensable">必須</span><br>
       <%= f.collection_radio_buttons(:genre_id, Genre.all, :id, :name, {}, {class:"genre"}) %>
     </div>
 
