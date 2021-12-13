@@ -2,12 +2,12 @@
   <% @posts.each do |post| %>
       <p><%= post.title %></p>
       <p><%= post.text %></p>
-  <%= image_tag post.image.variant(resize: '500x500') ,class:"post-img" if post.image.attached?%>
-  <% if user_signed_in? && current_user.id == post.user_id %>
   <div>
-  <%= link_to "投稿の編集", edit_post_path(post.id), method: :get, class: "btn btn-warning" %>
-  <%= link_to "投稿の削除", post_path(post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
+      <%= link_to '詳細', post_path(post.id), method: :get, class: "btn btn-success" %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+      <%= link_to "投稿の編集", edit_post_path(post.id), method: :get, class: "btn btn-warning" %>
+      <%= link_to "投稿の削除", post_path(post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
+    <% end %>
   </div>
-  <% end %>
   <% end %>
 </div>
