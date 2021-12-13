@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "posts/side_bar" %>
+  </div>
+</div>
+
+
+<div class="card col-sm-5 mx-auto mt-5">
+  <div class="card-body">
+    <div class="col text-center">
+      <div class="contents row">
+            <p><%= @post.title %></p>
+            <p><%= @post.text %></p>
+            <p><%= link_to @post.reference, @post.reference %></p>
+            <p><%= @post.genre.name %></p>
+        <%= image_tag @post.image.variant(resize: '500x500') ,class:"post-img" if @post.image.attached?%>
+        <div>
+          <% if user_signed_in? && current_user.id == @post.user_id %>
+            <%= link_to "投稿の編集", edit_post_path(@post.id), method: :get, class: "btn btn-warning" %>
+            <%= link_to "投稿の削除", post_path(@post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
+          <% end %>
+            <br><%=link_to 'もどる', root_path, :class => "btn btn-secondary btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= render "shared/footer" %>
