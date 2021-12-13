@@ -31,9 +31,9 @@ RSpec.describe Post, type: :model do
         expect(@post.errors.full_messages).to include("Text can't be blank")
       end
       it 'userが紐付いていなければ投稿できない' do
-          @post.user = nil
-          @post.valid?
-          expect(@post.errors.full_messages).to include('User must exist')
+        @post.user = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include('User must exist')
       end
     end
   end

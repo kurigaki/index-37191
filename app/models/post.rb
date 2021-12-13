@@ -6,5 +6,5 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :text, presence: true
-  validates :genre_id, numericality: { other_than: 0 , message: "can't be blank"} 
+  validates :genre_id, numericality: { other_than: 0, message: "can't be blank" }
 end
