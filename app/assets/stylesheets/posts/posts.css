@@ -66,3 +66,7 @@
   font-size: 12px;
   font-weight: bold;
 }
+
+.wrapper {
+  display: flex;
+}
