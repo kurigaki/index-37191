@@ -33,10 +33,23 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       redirect_to edit_post_path(@post.id)
     end
+    if params[:delete_image]
+      @post.image = nil
+      @post.save!
+    end
   end
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def search
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.order('created_at DESC')
   end
 
   private
