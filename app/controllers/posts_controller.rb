@@ -33,6 +33,10 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       redirect_to edit_post_path(@post.id)
     end
+    if params[:delete_image]
+      @post.image = nil
+      @post.save!
+    end
   end
 
   def show

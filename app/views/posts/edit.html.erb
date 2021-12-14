@@ -38,11 +38,23 @@
       <%= f.text_field :reference, placeholder:"例) https://google.html", :class => "form-control" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :image, "参考画像", :class => "form-label" %>
-      <span class="any">任意</span><br>
-      <%= f.file_field :image, :class => "form-control" %>
-    </div>
+    <% unless @post.image.present? %>
+      <div class="form-group">
+        <%= f.label :image, "参考画像", :class => "form-label" %>
+        <span class="any">任意</span><br>
+        <%= f.file_field :image, :class => "form-control" %>
+      </div>
+    <% end %>
+
+    <% if @post.image.present? %>
+      <div>
+        <p>参考画像</p>
+        <%= image_tag @post.image.variant(resize: '250x250') %>
+        <%= form_for([:new, @post]) do |f| %>
+          <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "サムネイル画像を削除しますか？"}, class: "btn_send"%>
+        <% end %>
+      </div>
+    <% end %>
  
     <div class="col text-center"><br>
       <%= f.submit "編集する", :class => "btn btn-warning btn-block" %>
