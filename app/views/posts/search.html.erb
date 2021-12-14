@@ -4,14 +4,19 @@
 <div class='item-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
-      <%= f.label :title_cont, '商品名' %>
+      <%= f.label :title, '商品名' %>
       <br>
-      <%= f.text_field :title_cont, placeholder: '商品名', value: params[:q]&.dig(:title)  %>
+      <%= f.text_field :title, placeholder: '商品名', value: params[:q]&.dig(:title)  %>
     </div>
     <div class="search-field">
-      <%= f.label :genre_id_eq, 'カテゴリ' %>
+      <%= f.label :user_name_cont, '出品者名' %>
       <br>
-      <%= f.collection_radio_buttons(:genre_id_eq, Genre.all, :id, :name) %>
+      <%= f.text_field :user_name_cont, placeholder: '出品者名' %>
+    </div>
+    <div class="search-field">
+      <%= f.label :genre_id_in, 'カテゴリ' %>
+      <br>
+      <%= f.collection_check_boxes(:genre_id_in, Genre.all, :id, :name, {include_blank: "---"}) %>
     </div>
     <%= f.submit '検索' %>
   <% end %>
@@ -19,9 +24,10 @@
     <% @posts.each do |post| %>
       <li class='list'>
         <div class="posted-content">
-          <%= image_tag post.image %><br>
-          <%= post.title%><br>
-          <%= link_to '詳細', post_path(post.id)%>
+          <p><%= post.title %></p>
+          <p><%= post.text %></p>
+          <p><%= image_tag post.image if post.image.present? %></p>
+          <p><%= link_to '詳細', post_path(post.id)%></p>
         </div>
       </li>
     <% end %>
