@@ -39,6 +39,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.order('created_at DESC')
+  end
+
   private
 
   def post_params
