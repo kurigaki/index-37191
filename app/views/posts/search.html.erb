@@ -1,6 +1,17 @@
 <%= render "shared/header" %>
+
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "posts/side_bar" %>
+  </div>
+    <div class="posts">
+
+
+<div class="card col-sm-5 mx-auto mt-5">
+  <div class="card-body">
+    <div class="col text-center">
+
 <h3>検索ページ</h3>
-<h3><%= link_to 'トップページへ戻る', root_path%></h3>
 <div class='item-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
@@ -19,17 +30,30 @@
       <%= f.collection_check_boxes(:genre_id_in, Genre.all, :id, :name, {include_blank: "---"}) %>
     </div>
     <%= f.submit '検索' %>
+    <br><br>
+    <%=link_to 'トップページに戻る', root_path, :class => "btn btn-secondary btn-block" %>
   <% end %>
+      </div>
+  </div>
+</div>
+</div>
+
     <ul class='item-lists' id="detailed-search-result">
     <% @posts.each do |post| %>
-      <li class='list'>
+      <li class='list'><br>
+      <div class="card col-sm-10 mx-auto mt-10">
         <div class="posted-content">
           <p><%= post.title %></p>
           <p><%= post.text %></p>
-          <p><%= image_tag post.image if post.image.present? %></p>
+          <%= image_tag post.image.variant(resize: '500x500') ,class:"post-img" if post.image.attached?%>
           <p><%= link_to '詳細', post_path(post.id)%></p>
         </div>
       </li>
     <% end %>
   </ul>
+  </div>
+
+
+  </div>
 </div>
+<%= render "shared/footer" %>

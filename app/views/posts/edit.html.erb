@@ -48,10 +48,11 @@
 
     <% if @post.image.present? %>
       <div>
-        <p>参考画像</p>
+        参考画像
+        <span class="any">任意</span><br>
         <%= image_tag @post.image.variant(resize: '250x250') %>
         <%= form_for([:new, @post]) do |f| %>
-          <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "サムネイル画像を削除しますか？"}, class: "btn_send"%>
+          <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "参考画像を削除しますか？"}, class: "btn_send"%>
         <% end %>
       </div>
     <% end %>
