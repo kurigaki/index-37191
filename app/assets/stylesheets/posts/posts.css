@@ -1,5 +1,6 @@
 .posts {
-  background-color: #FAFAFA;
+  background-image: url("/images/chalkboard-green-pattern-01.jpg");
+
   height: 100%;
   width: 100%;
   padding: 20px 20px 0;
@@ -69,4 +70,8 @@
 
 .wrapper {
   display: flex;
+}
+
+.white{
+  color: white;
 }
