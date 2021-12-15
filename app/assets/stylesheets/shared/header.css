@@ -22,3 +22,9 @@
 .btn{
   margin: 1px;
 }
+
+.main-container {
+  background-image: url("/images/cork01.jpg");
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode:lighten;
+}
