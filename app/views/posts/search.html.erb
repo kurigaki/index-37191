@@ -42,16 +42,25 @@
     <% @posts.each do |post| %>
       <li class='list'><br>
       <div class="card col-sm-10 mx-auto mt-10">
-        <div class="posted-content">
-          <p><%= post.title %></p>
-          <p><%= post.text %></p>
-          <%= image_tag post.image.variant(resize: '500x500') ,class:"post-img" if post.image.attached?%>
-          <p><%= link_to '詳細', post_path(post.id)%></p>
+        <table class="post-table">
+            <tr>
+            <th class="post-th"><h6 class="pink">タイトル</h6></th>
+            <td class="post-td"><%= post.title %></td>
+            </tr>
+            <tr>
+            <th class="post-th"><h6 class="pink">説明</h6></th>
+            <td class="post-td"><%= post.text %></td>
+            </tr>
+        <tr>
+      <th class="post-th"><h6 class="pink">詳細</h6></th>
+      <td class="post-td"><%= link_to '詳細', post_path(post.id), method: :get, class: "btn btn-success" %>
+      </tr>
         </div>
       </li>
+        </table>
     <% end %>
   </ul>
-  </div>
+ 
 
 
   </div>

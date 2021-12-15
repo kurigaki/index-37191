@@ -33,7 +33,6 @@
 .post-content {
   color: #434a54;
   font-size: 14px;
-  margin-bottom: 40px;
 }
 
 .post-img {
@@ -74,4 +73,27 @@
 
 .white{
   color: white;
+}
+
+.pink{
+  color: #ff1493;
+}
+
+.post-table {
+  width: 100%;
+}
+
+.post-th {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.post-td {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
 }
