@@ -11,31 +11,12 @@
   <div class="card-body">
     <div class="col text-center">
 
-<h3>検索ページ</h3>
-<div class='item-contents' id="detailed-search-result-wrapper">
-  <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-      <%= f.label :title, '商品名' %>
-      <br>
-      <%= f.text_field :title, placeholder: '商品名', value: params[:q]&.dig(:title)  %>
+
+
+      <p><h3>検索結果</h3></p>
+      <%=link_to 'トップページに戻る', root_path, :class => "btn btn-secondary btn-block" %>
     </div>
-    <div class="search-field">
-      <%= f.label :user_name_cont, '出品者名' %>
-      <br>
-      <%= f.text_field :user_name_cont, placeholder: '出品者名' %>
-    </div>
-    <div class="search-field">
-      <%= f.label :genre_id_in, 'カテゴリ' %>
-      <br>
-      <%= f.collection_check_boxes(:genre_id_in, Genre.all, :id, :name, {include_blank: "---"}) %>
-    </div>
-    <%= f.submit '検索' %>
-    <br><br>
-    <%=link_to 'トップページに戻る', root_path, :class => "btn btn-secondary btn-block" %>
-  <% end %>
-      </div>
   </div>
-</div>
 </div>
 
     <ul class='item-lists' id="detailed-search-result">
@@ -60,8 +41,9 @@
         </table>
     <% end %>
   </ul>
- 
-
+<div class="text-center">
+  <%=link_to 'ページ上部へ', search_posts_path, :class => "btn btn-secondary btn-block" %>
+</div><br>
 
   </div>
 </div>
