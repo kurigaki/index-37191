@@ -3,11 +3,11 @@
   <h3 class="text-center">検索機能</h3>
     <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="side-search-field">
-    <div class="side-search-field">
       <%= f.label :user_name_cont, '投稿者名' %>
       <br>
       <%= f.text_field :user_name_cont, placeholder: '例) 田中太郎',:size=>"15x15" %>
     </div>
+    <div class="side-search-field">
       <%= f.label :title, 'タイトル' %>
       <br>
       <%= f.text_field :title, placeholder: '例) バリデーション', value: params[:q]&.dig(:title),:size=>"15x15"  %>

@@ -12,6 +12,7 @@
     <div class="col text-center">
       <div class="contents row">
       <table class="show-table">
+            <tr>
             <th class="show-th"><h6 class="pink">ジャンル</h6></th>
             <td class="show-td"><%= @post.genre.name %></td>
             </tr>
@@ -38,12 +39,11 @@
             <% else %>
             <td class="show-td">参考画像がありません</td>
             <% end %>
-            <tr>
+            </tr>
             <tr>
             <th class="show-th"><h6 class="pink">投稿者名</h6></th>
             <td class="show-td"><%= @post.user.name %></td>
             </tr>
-            <tr>
             <tr>
             <th class="show-th"><h6 class="pink">投稿日時</h6></th>
             <td class="show-td"><%= @post.created_at.strftime("%Y-%m-%d %H:%M")%></td>
