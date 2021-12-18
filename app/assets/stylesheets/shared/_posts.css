@@ -1,5 +1,87 @@
+.posts {
+  background-image: url("/images/chalkboard-green-pattern-01.jpg");
+
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px 0;
+  overflow: scroll;
+}
+
+.post {
+  margin: 10px 0 0 0;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.upper-post{
+  display: flex;
+}
+
+.post-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.post-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-post {
+  margin-top: 10px;
+}
+
+.post-content {
+  color: #434a54;
+  font-size: 14px;
+}
+
+.post-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+.genre{
+  margin: 0 7px;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.any{
+  background: #808080;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+}
+
 .white{
   color: white;
+}
+
+.pink{
+  color: #ff1493;
 }
 
 .post-table {
@@ -14,17 +96,9 @@
   text-align: center;
 }
 
-.pink{
-  color: #ff1493;
-}
-
 .post-td {
   width: 80%;
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
-}
-
-.btn{
-  margin: 1px;
 }
