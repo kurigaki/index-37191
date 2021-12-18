@@ -13,38 +13,38 @@
     <%= form_with(model: @post, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="form-group">
-      <%= f.label :genre, "ジャンル", :class => "form-label" %>
+      <%= f.label :genre, "ジャンル"%>
       <span class="indispensable">必須</span><br>
-      <%= f.collection_radio_buttons(:genre_id, Genre.all, :id, :name, {}, {class:"genre"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {prompt: "---"}, {class:"genre"}) %>
     </div>
 
     <div class="form-group">
-      <%= f.label :title, "タイトル", :class => "form-label" %>
+      <%= f.label :title, "タイトル" %>
       <span class="indispensable">必須</span><br>
-      <%= f.text_field :title, placeholder:"例) バリデーション", autofocus: true, :class => "form-control" %>
+      <%= f.text_field :title, placeholder:"例) バリデーション", autofocus: true, class:"form-control" %>
     </div>
  
     <div class="form-group">
-      <%= f.label :text, "説明", :class => "form-label" %>
+      <%= f.label :text, "説明" %>
       <span class="indispensable">必須</span><br>
-      <%= f.text_area :text, placeholder:"例) 入力チェックのこと", :class => "form-control", :size=>"5x5" %>
+      <%= f.text_area :text, placeholder:"例) 入力チェックのこと", class:"form-control", size:"5x5" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :reference, "参考URL", :class => "form-label" %>
+      <%= f.label :reference, "参考URL"%>
       <span class="any">任意</span><br>
-      <%= f.text_field :reference, placeholder:"例) https://google.html", :class => "form-control" %>
+      <%= f.text_field :reference, placeholder:"例) https://google.html", class:"form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :image, "参考画像", :class => "form-label" %>
+      <%= f.label :image, "参考画像" %>
       <span class="any">任意</span><br>
-      <%= f.file_field :image, :class => "form-control" %>
+      <%= f.file_field :image, class:"form-control" %>
     </div>
  
     <div class="col text-center"><br>
-      <%= f.submit "投稿する", :class => "btn btn-primary btn-block" %>
-      <%=link_to 'もどる', root_path, :class => "btn btn-secondary btn-block" %>
+      <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
+      <%=link_to 'もどる', root_path, class: "btn btn-secondary btn-block" %>
     </div>
     <% end %>
  

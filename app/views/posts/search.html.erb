@@ -10,39 +10,33 @@
 <div class="card col-sm-5 mx-auto mt-5">
   <div class="card-body">
     <div class="col text-center">
-
-
-
       <p><h3>検索結果</h3></p>
-      <%=link_to 'トップページに戻る', root_path, :class => "btn btn-secondary btn-block" %>
+      <%=link_to 'トップページに戻る', root_path, class: "btn btn-secondary btn-block" %>
     </div>
   </div>
-</div>
+</div><br>
 
-    <ul class='item-lists' id="detailed-search-result">
-    <% @posts.each do |post| %>
-      <li class='list'><br>
-      <div class="card col-sm-10 mx-auto mt-10">
-        <table class="post-table">
-            <tr>
-            <th class="post-th"><h6 class="pink">タイトル</h6></th>
-            <td class="post-td"><%= post.title %></td>
-            </tr>
-            <tr>
-            <th class="post-th"><h6 class="pink">説明</h6></th>
-            <td class="post-td"><%= post.text %></td>
-            </tr>
-        <tr>
+<div class="white">
+  <% @posts.each do |post| %>
+    <table class="post-table">
+      <tr>
+        <th class="post-th"><h6 class="pink">タイトル</h6></th>
+        <td class="post-td"><%= post.title %></td>
+      </tr>
+      <tr>
+        <th class="post-th"><h6 class="pink">説明</h6></th>
+        <td class="post-td"><%= post.text %></td>
+      </tr>
+      <tr>
       <th class="post-th"><h6 class="pink">詳細</h6></th>
       <td class="post-td"><%= link_to '詳細', post_path(post.id), method: :get, class: "btn btn-success" %>
       </tr>
-        </div>
-      </li>
-        </table>
-    <% end %>
-  </ul>
+    </table><br>
+  <% end %>
+</div>
+
 <div class="text-center">
-  <%=link_to 'ページ上部へ', search_posts_path, :class => "btn btn-secondary btn-block" %>
+  <%=link_to '検索ページTOP', search_posts_path, class: "btn btn-secondary btn-block" %>
 </div><br>
 
   </div>

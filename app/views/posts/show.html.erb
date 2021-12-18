@@ -10,61 +10,58 @@
 <div class="card col-sm-10 mx-auto mt-10">
   <div class="card-body">
     <div class="col text-center">
-      <div class="contents row">
       <table class="show-table">
-            <tr>
-            <th class="show-th"><h6 class="pink">ジャンル</h6></th>
-            <td class="show-td"><%= @post.genre.name %></td>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">タイトル</h6></th>
-            <td class="show-td"><%= @post.title %></td>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">説明</h6></th>
-            <td class="show-td"><%= @post.text %></td>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">参考資料</h6></th>
-            <% if @post.reference.present? %>
-            <td class="show-td"><%= link_to @post.reference, @post.reference %></td>
-            <% else %>
-            <td class="show-td">参考資料がありません</td>
-            <% end %>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">参考画像</h6></th>
-            <% if @post.image.attached? %>
-            <td class="show-td"><%= image_tag @post.image.variant(resize: '500x500') ,class:"post-img" %></td>
-            <% else %>
-            <td class="show-td">参考画像がありません</td>
-            <% end %>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">投稿者名</h6></th>
-            <td class="show-td"><%= @post.user.name %></td>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">投稿日時</h6></th>
-            <td class="show-td"><%= @post.created_at.strftime("%Y-%m-%d %H:%M")%></td>
-            </tr>
-            <tr>
-            <th class="show-th"><h6 class="pink">最終更新</h6></th>
-            <td class="show-td"><%= @post.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
-            </tr>
-        </table>
-        <div>
-          <% if user_signed_in? && current_user.id == @post.user_id %>
-            <%= link_to "投稿の編集", edit_post_path(@post.id), method: :get, class: "btn btn-warning" %>
-            <%= link_to "投稿の削除", post_path(@post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
-          <% end %>
-            <br><%=link_to 'もどる', root_path, :class => "btn btn-secondary btn-block" %>
-        </div>
+        <tr>
+        <th class="show-th"><h6 class="pink">ジャンル</h6></th>
+        <td class="show-td"><%= @post.genre.name %></td>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">タイトル</h6></th>
+        <td class="show-td"><%= @post.title %></td>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">説明</h6></th>
+        <td class="show-td"><%= @post.text %></td>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">参考資料</h6></th>
+        <% if @post.reference.present? %>
+        <td class="show-td"><%= link_to @post.reference, @post.reference %></td>
+        <% else %>
+        <td class="show-td">参考資料がありません</td>
+        <% end %>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">参考画像</h6></th>
+        <% if @post.image.attached? %>
+        <td class="show-td"><%= image_tag @post.image.variant(resize: '500x500') ,class:"post-img" %></td>
+        <% else %>
+        <td class="show-td">参考画像がありません</td>
+        <% end %>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">投稿者名</h6></th>
+        <td class="show-td"><%= @post.user.name %></td>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">投稿日時</h6></th>
+        <td class="show-td"><%= @post.created_at.strftime("%Y-%m-%d %H:%M")%></td>
+        </tr>
+        <tr>
+        <th class="show-th"><h6 class="pink">最終更新</h6></th>
+        <td class="show-td"><%= @post.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
+        </tr>
+      </table>
+      <div>
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+          <%= link_to "投稿の編集", edit_post_path(@post.id), method: :get, class: "btn btn-warning" %>
+          <%= link_to "投稿の削除", post_path(@post.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に削除してもよろしいですか？' } %>
+        <% end %>
+          <br><%=link_to 'もどる', root_path, class: "btn btn-secondary btn-block" %>
       </div>
     </div>
   </div>
-</div>
-<br>
+</div><br>
 
 
   </div>
