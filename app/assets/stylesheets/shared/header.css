@@ -1,13 +1,17 @@
 .header-all {
-  background-image: url("/images/cork01.jpg");
-  background-color: rgba(255, 255, 255, 0.5);
-  background-blend-mode:lighten;
   width: 100vw;
   padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
 }
 
-ul {
-  list-style: none;
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
 }
 
 .header-lists {
@@ -17,4 +21,10 @@ ul {
 
 .btn{
   margin: 1px;
+}
+
+.main-container {
+  background-image: url("/images/cork01.jpg");
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode:lighten;
 }

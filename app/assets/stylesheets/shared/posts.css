@@ -1,4 +1,3 @@
-<<<<<<< HEAD:app/assets/stylesheets/shared/posts.css
 .posts {
   background-image: url("/images/chalkboard-green-pattern-01.jpg");
 
@@ -72,10 +71,12 @@
   display: flex;
 }
 
-=======
->>>>>>> parent of 88055f2 (Revert "リファクタリング"):app/assets/stylesheets/shared/_posts.css
 .white{
   color: white;
+}
+
+.pink{
+  color: #ff1493;
 }
 
 .post-table {
@@ -90,17 +91,9 @@
   text-align: center;
 }
 
-.pink{
-  color: #ff1493;
-}
-
 .post-td {
   width: 80%;
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
-}
-
-.btn{
-  margin: 1px;
 }

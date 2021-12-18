@@ -1,19 +1,7 @@
+ul {
+  list-style: none;
+}
+
 .wrapper {
   display: flex;
-}
-
-.side-bar {
-  background-image: url("/images/chalkboard-green-pattern-02.jpg");
-  background-color: rgba(255, 255, 255, 0.8);
-  background-blend-mode:lighten;
-  width: 300px;
-}
-
-.posts {
-  background-image: url("/images/chalkboard-green-pattern-01.jpg");
-
-  height: 100%;
-  width: 100%;
-  padding: 20px 20px 0;
-  overflow: scroll;
 }

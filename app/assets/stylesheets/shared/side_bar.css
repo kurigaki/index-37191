@@ -6,19 +6,10 @@
 }
 
 .search {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .side-search-field{
   text-align: center;
   margin: 5px;
-}
-.check-boxes{
-  margin: 0 7px;
-}
-
-.side-bar-search{
-  text-align: center;
-  background-color: gray;
-  color: deepskyblue;
 }
