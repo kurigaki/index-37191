@@ -4,7 +4,7 @@
     <ul class='header-lists'>
       <%= link_to 'トップページ', root_path, class: "btn btn-primary" %>
       <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.name}さんのマイページ", user_path(current_user.id), class: "btn btn-info" %></li>
+      <li><%= link_to "#{current_user.name}さんのマイページ", root_path, class: "btn btn-info" %></li>
       <li><%= link_to "アカウントの編集", edit_user_registration_path(current_user), class: "btn btn-dark" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-secondary" %></li>
       <% else %>
