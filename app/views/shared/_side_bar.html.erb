@@ -1,26 +1,26 @@
 <div class="side-bar-header">
   <div class="search">
-  <h3 class="text-center">検索機能</h3>
+  <h3 class="side-bar-search">検索機能</h3>
     <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="side-search-field">
       <%= f.label :user_name_cont, '投稿者名' %>
       <br>
-      <%= f.text_field :user_name_cont, placeholder: '例) 田中太郎',:size=>"15x15" %>
+      <%= f.text_field :user_name_cont, placeholder: '例) 田中太郎', size: "20x20"  %>
     </div>
     <div class="side-search-field">
       <%= f.label :title, 'タイトル' %>
       <br>
-      <%= f.text_field :title, placeholder: '例) バリデーション', value: params[:q]&.dig(:title),:size=>"15x15"  %>
+      <%= f.text_field :title, placeholder: '例) バリデーション', value: params[:q]&.dig(:title), size: "20x20"  %>
     </div>
     <div class="side-search-field">
       <%= f.label :text_cont, '説明' %>
       <br>
-      <%= f.text_field :text_cont, placeholder: '例) 入力チェック',:size=>"15x15" %>
+      <%= f.text_area :text_cont, placeholder: '例) 入力チェック', size: "20x5"  %>
     </div>
     <div class="side-search-field">
       <%= f.label :genre_id_in, 'ジャンル' %>
       <br>
-      <%= f.collection_check_boxes(:genre_id_in, Genre.all, :id, :name, {include_blank: "---"}) %>
+      <p class="check-boxes"><%= f.collection_check_boxes(:genre_id_in, Genre.all, :id, :name) %></p>
     </div>
     <div class="side-search-field">
     <%= f.submit '検索' %>

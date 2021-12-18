@@ -17,3 +17,31 @@
   padding: 20px 20px 0;
   overflow: scroll;
 }
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.genre{
+  margin: 0 7px;
+}
+
+.any{
+  background: #808080;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn{
+  margin: 1px;
+}
