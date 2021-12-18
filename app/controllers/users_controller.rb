@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @name = current_user.name
+    @posts = Post.includes(:user).order('created_at DESC')
+  end
+
   private
 
   def user_params

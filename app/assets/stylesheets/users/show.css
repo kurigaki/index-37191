@@ -18,36 +18,33 @@
   overflow: scroll;
 }
 
-.show-table {
+.mypage-head{
+  text-align: center;
+  background-color: gray;
+  color: deepskyblue;
+}
+
+.white{
+  color: white;
+}
+
+.post-table {
   width: 100%;
 }
 
-.show-th {
-  width: 100%;
+.post-th {
+  width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
-  display:block;
 }
 
-.pink{
-  color: #ff1493;
-}
-
-.show-td {
-  width: 100%;
+.post-td {
+  width: 80%;
+  padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
-  display:block;
-}
-
-.post-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
 }
 
 .btn{
